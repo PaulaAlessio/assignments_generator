@@ -46,6 +46,8 @@ def select_n_expressions(n, inputfile):
   ret_expressions = []
   with open(inputfile) as fr:
     size = len([0 for _ in fr])
+  if n>size:
+      n=size
   lines_to_read = random.sample(range(1, size + 1), n)
   nl = 1
   with open(inputfile, 'r') as fr:
